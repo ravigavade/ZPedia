@@ -12,10 +12,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 import com.csaim.zpedia.viewModel.CharacterViewModel
 
 @Composable
-fun CharacterComposebale(viewModel: CharacterViewModel = viewModel()) {
+fun CharacterComposebale(navController: NavController,viewModel: CharacterViewModel = viewModel()) {
 
     val CharacterList by viewModel.characters.collectAsState()
 
