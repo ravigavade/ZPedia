@@ -1,6 +1,7 @@
 package com.csaim.zpedia.ui.screens
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -18,18 +19,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
+import com.csaim.zpedia.ui.theme.DBZFont
 import com.csaim.zpedia.viewModel.CharacterViewModel
 
 @Composable
-fun CharacterComposebale(navController: NavController,viewModel: CharacterViewModel = viewModel()) {
+fun CharacterComposable(navController: NavController, viewModel: CharacterViewModel = viewModel()) {
 
     val CharacterList by viewModel.characters.collectAsState()
 
@@ -56,15 +58,20 @@ fun CharacterComposebale(navController: NavController,viewModel: CharacterViewMo
                     Card(
                         modifier = Modifier
                             .weight(1f) // equally divide space
-                            .padding(bottom = 16.dp),
+
+                            .padding(bottom = 16.dp)
+                            .clickable {
+                                navController.navigate("CharacterDetails/${character.id}")
+                            },
                         colors = CardDefaults.cardColors(
-                            containerColor = Color(0xFFe76a24)
+                            containerColor = Color(0xFFe76a24),
+
                         )
 
 
                     ) {
                         Column(
-                            modifier = Modifier.padding(16.dp)
+                            modifier = Modifier.padding(16.dp),
                         ) {
                             AsyncImage(
                                 model = character.image,
@@ -77,6 +84,8 @@ fun CharacterComposebale(navController: NavController,viewModel: CharacterViewMo
                                 modifier = Modifier
                                     .fillParentMaxWidth(),
                                 text = character.name,
+                                fontFamily = DBZFont,
+                                fontSize = 32.sp,
                                 textAlign = TextAlign.Center,
                                 color = Color.White
                             )

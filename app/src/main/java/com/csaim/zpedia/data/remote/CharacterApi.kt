@@ -11,5 +11,5 @@ object CharacterApi {
         .build()
 
     val characterServiceApi = retrofit.create(CharacterServiceApi::class.java)
-
+    var characterDetailsServiceApi = retrofit.create(CharacterDetailsServiceApi::class.java)
 }
