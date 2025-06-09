@@ -74,7 +74,7 @@ fun CharacterDetails(
     ){
         //bg image
         AsyncImage(
-            model = com.csaim.zpedia.R.drawable.bg,
+            model = com.csaim.zpedia.R.drawable.bg4,
             contentDescription = "",
             modifier = Modifier
                 .fillMaxSize(),
@@ -142,7 +142,7 @@ fun CharacterDetails(
                         val isHighlighted = transformation.name == selectedTransformation?.name
                            Text(
                                text = transformation.name,
-                               color = if (isHighlighted) Color.White else Color.White,
+                               color = if (isHighlighted) Color.White else Color.Gray,
                                fontFamily =  FontFamily.Monospace,
                                fontWeight = if (isHighlighted) FontWeight.Bold else FontWeight.Normal,
                                fontSize = if (isHighlighted) 14.sp else 12.sp,
@@ -157,17 +157,20 @@ fun CharacterDetails(
                     //character description
                     Card(
                         colors = CardDefaults.cardColors(
-                            containerColor = Color(0xFFE7E5EB)
+                            containerColor = Color(0xFFFFFFFF)
 
                         ),
                         shape = RoundedCornerShape(6.dp)
                     ) {
-                        Text(
-                            details!!.description,
-                            Modifier.padding(16.dp),
-                            maxLines = 5,
-                            overflow = TextOverflow.Visible
-                        )
+                        details?.description?.let { it1 ->
+                            Text(
+                                text = it1,
+                                modifier = Modifier.padding(16.dp),
+                                maxLines = 5,
+                                color = Color.Black,
+                                overflow = TextOverflow.Ellipsis,
+                            )
+                        }
                     }
                 }
 
