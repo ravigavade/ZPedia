@@ -79,7 +79,7 @@ fun CharacterDetails(
             modifier = Modifier
                 .fillMaxSize(),
             contentScale = ContentScale.Crop,
-            alpha = 0.8f
+            alpha = 0.9f
         )
         //character image
         Box(

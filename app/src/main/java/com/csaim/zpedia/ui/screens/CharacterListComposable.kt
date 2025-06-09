@@ -70,7 +70,7 @@ fun CharacterComposable(navController: NavController, viewModel: CharacterViewMo
             contentDescription = "",
             contentScale = ContentScale.Crop,
             modifier = Modifier.fillMaxSize(),
-            alpha = 0.8f
+            alpha = 0.9f
         )
         LazyColumn(
 
@@ -97,7 +97,7 @@ fun CharacterComposable(navController: NavController, viewModel: CharacterViewMo
                                     navController.navigate("CharacterDetails/${character.id}")
                                 },
                             colors = CardDefaults.cardColors(
-                                containerColor = Color(0xFF3266B0),
+                                containerColor = Color(0xFF062B68),
 
                                 )
 
