@@ -123,6 +123,7 @@ fun HomeComposable(navController: NavController) {
                             ),
                             onClick = {
                                 //navigate to zfighters screen
+//                                navController.navigate("CharacterScreen")
                             }
                         ) {
                             Text(
