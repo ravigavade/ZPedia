@@ -54,7 +54,7 @@ fun HomeComposable(navController: NavController) {
             contentDescription = "",
             modifier = Modifier
                 .fillMaxSize(),
-            contentScale = ContentScale.Crop
+            contentScale = ContentScale.Crop,
         )
 
 
@@ -91,8 +91,9 @@ fun HomeComposable(navController: NavController) {
                     .height(130.dp),
                 colors = CardDefaults.cardColors(
                     containerColor = Color(0xFFD6061C)
+                    //added
                 ),
-
+//
             ) {
                 //entire card as a row
                 Row {
